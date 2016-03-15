@@ -1,34 +1,39 @@
 <div class="container">
-
-  <div>
-    <acme-navbar creation-date="main.creationDate"></acme-navbar>
-  </div>
-
-  <div class="jumbotron text-center">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
-    </p>
-    <p class="animated infinite" ng-class="main.classAnimation">
-      <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
-    </p>
-    <p>
-      With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-    </p>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-        <div class="caption">
-          <h3>{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
-        </div>
-      </div>
+    <div>
+        <acme-navbar creation-date="main.creationDate"></acme-navbar>
     </div>
-  </div>
-
+    <div class="jumbotron text-center">
+        <h1>'Allo, 'Allo!</h1>
+        <p class="lead">
+            <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+            <br> Always a pleasure scaffolding your apps.
+        </p>
+        <p class="animated infinite" ng-class="main.classAnimation">
+            <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
+        </p>
+        <p>
+            With ♥ thanks to the contributions of
+            <acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+        </p>
+    </div>
+    <div class="row">
+        <a href="" class="btn btn-default bmd-ripple bmd-fab bmd-floating bmd-ink-grey-400"><span class="bmd-icon flaticon-add186"></span></a>
+        <a href="" class="btn btn-primary bmd-ripple bmd-fab bmd-floating"><span class="bmd-icon flaticon-create3"></span></a>
+        <a href="" class="btn btn-success bmd-ripple bmd-fab bmd-floating"><span class="bmd-icon flaticon-mark1"></span></a>
+        <a href="" class="btn btn-info bmd-ripple bmd-fab bmd-floating"><span class="bmd-icon flaticon-favorite21"></span></a>
+        <a href="" class="btn btn-warning bmd-ripple bmd-fab bmd-floating"><span class="bmd-icon flaticon-forward18"></span></a>
+        <a href="" class="btn btn-danger bmd-ripple bmd-fab bmd-floating"><span class="bmd-icon flaticon-users25"></span></a>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+            <div class="thumbnail">
+                <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+                <div class="caption">
+                    <h3>{{ awesomeThing.title }}</h3>
+                    <p>{{ awesomeThing.description }}</p>
+                    <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

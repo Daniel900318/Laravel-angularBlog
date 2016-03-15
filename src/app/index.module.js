@@ -1,7 +1,7 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('uglymona', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ui.bootstrap', 'toastr']);
+    angular
+        .module('uglymona', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ui.bootstrap', 'toastr']);
 
 })();
