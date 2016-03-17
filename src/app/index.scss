@@ -35,3 +35,35 @@ $navbar-inverse-link-color: #5AADBB;
 
 // injector
 // endinjector
+// html, body{
+//     height: 100%;
+//     >div.ng-scope{
+//         height: 100%;
+//     }
+// }
+#landing{
+    background: url(../assets/landing.png) no-repeat;
+    background-size: 100% auto;    
+    padding-bottom: 90%;
+    position: relative;
+    .landing{
+        font-family: 'Kelson-light', Sans-serif;
+        position: absolute;
+        top: 50%;
+        left: 29%;
+        color: white;
+        font-size: 45px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: 4px white solid;
+        padding: 10px 30px;
+        border-radius: 13px;
+        font-weight: 200;
+    }
+}
+
+#pagewrap{
+    position: relative; 
+	background: url(../assets/main_back.png) no-repeat;
+	background-size: 100% 100%;
+}

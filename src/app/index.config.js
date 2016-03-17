@@ -17,5 +17,5 @@
         toastrConfig.preventDuplicates = true;
         toastrConfig.progressBar = true;
     }
-
+    
 })();
