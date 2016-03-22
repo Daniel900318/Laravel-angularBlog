@@ -48,7 +48,7 @@
                 url: '/photograph',
                 templateUrl: 'app/patial/photograph/photograph.html',
                 controller: 'PhotographController',
-                controllerAs: 'photograph'
+                controllerAs: 'photo'
             })
             .state('home.romantic', {
                 url: '/romantic',

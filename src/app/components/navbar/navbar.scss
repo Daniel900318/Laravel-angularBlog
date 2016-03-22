@@ -1,3 +1,17 @@
+// color
+$border: #a6a7a7;
+$a_border: #8e8e8e;
+$a_color: #ca58b8;
+$a_hover: #60a6ff;
+$p_color: #b5b6b0;
+// 
+%extend_1 {
+	background-size: 429px 82px;
+    padding: 13px 24px;
+    margin-right: 5px;
+}
+
+
 .acme-navbar-text{
   color: white;
 }
@@ -48,8 +62,150 @@
 
 #nav_bar{
 	position: absolute;
-	top: 200px;
+	top: 368px;
+	width: 100%;
+	z-index: 10;
+	.navbar.navbar-inverse{
+		border: 1px $border solid;
+	    width: 85%;
+	    margin: 0px auto;
+	    border-radius: 0px;
+	}
+	li>a{
+		border-right: 1px $a_border solid;
+	    margin: 14px 6px;
+	    padding: 1px 5px;
+	    font-weight: 400;
+	    color: white;	    
+	    &.active{
+	        color: $a_color;
+		    // font-weight: 600;
+	    }
+	    &:hover{
+	    	color: $a_hover;
+	    }
+	}
+	ul{
+		li:last-child{
+    		a{	border:none;}
+    	}
+	}
 }
-#footer{
 
+
+#footer{
+	.footer_body{
+		background: url(../assets/footer_back.png) no-repeat;
+	    background-size: 100% 100%;
+	    padding: 65px 0px;
+	    .twitter{
+	    	background: url(../assets/social_icon.png) no-repeat;
+		    background-position: 0px 0px;
+		    background-size: 429px 82px;
+		    padding: 13px 24px;
+		    margin-right: 5px;
+		    cursor: pointer;
+		    &:hover{
+		    	background-position: 0px -42px;
+		    }
+	    }
+	    .googleplus{
+	    	background: url(../assets/social_icon.png) no-repeat;
+		    background-position: -46px 0px;
+		    background-size: 429px 82px;
+		    padding: 13px 24px;
+		    margin-right: 5px;
+		    cursor: pointer;
+		    &:hover{
+		    	background-position: -46px -42px;
+		    }
+	    }
+	    .dailymotion{
+	    	background: url(../assets/social_icon.png) no-repeat;
+		    background-position: -94px 0px;
+		    background-size: 429px 82px;
+		    padding: 13px 24px;
+		    margin-right: 5px;
+		    cursor: pointer;
+		    &:hover{
+		    	background-position: -94px -42px;
+		    }
+	    }
+	    .livejournal{
+	    	background: url(../assets/social_icon.png) no-repeat;
+		    background-position: -142px 0px;
+		    background-size: 429px 82px;
+		    padding: 13px 24px;
+		    margin-right: 5px;
+		    cursor: pointer;
+		    &:hover{
+		    	background-position: -142px -42px;
+		    }
+	    }
+	    .blogger{
+	    	background: url(../assets/social_icon.png) no-repeat;
+		    background-position: -191px 0px;
+		    background-size: 429px 82px;
+		    padding: 13px 24px;
+		    margin-right: 5px;
+		    cursor: pointer;
+		    &:hover{
+		    	background-position: -191px -42px;
+		    }
+	    }
+	    .odnoklassniki{
+	    	background: url(../assets/social_icon.png) no-repeat;
+		    background-position: -238px 0px;
+		    background-size: 429px 82px;
+		    padding: 13px 24px;
+		    margin-right: 5px;
+		    cursor: pointer;
+		    &:hover{
+		    	background-position: -238px -42px;
+		    }
+	    }
+	    .vk{
+	    	background: url(../assets/social_icon.png) no-repeat;
+		    background-position: -285px 0px;
+		    background-size: 429px 82px;
+		    padding: 13px 24px;
+		    margin-right: 5px;
+		    cursor: pointer;
+		    &:hover{
+		    	background-position: -285px -42px;
+		    }
+	    }
+	    .tumblr{
+	    	background: url(../assets/social_icon.png) no-repeat;
+		    background-position: -333px 0px;
+		    background-size: 429px 82px;
+		    padding: 13px 24px;
+		    margin-right: 5px;
+		    cursor: pointer;
+		    &:hover{
+		    	background-position: -333px -42px;
+		    }
+	    }
+	    .reddit{
+	    	background: url(../assets/social_icon.png) no-repeat;
+		    background-position: -380px 0px;
+		    background-size: 429px 82px;
+		    padding: 13px 24px;
+		    margin-right: 5px;
+		    cursor: pointer;
+		    &:hover{
+		    	background-position: -380px -42px;
+		    }
+	    }
+	    .copyright{
+	    	color: $p_color;
+	    }
+	    p{
+	    	color: $p_color;
+	    	cursor: pointer;
+	    	&:hover{
+	    		color: $a_hover;
+	    	}
+	    }
+	}	
 }

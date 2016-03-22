@@ -1,1 +1,44 @@
-<p>this is vlog</p>
+<div class="vlog_header" style="text-align:center">
+    <div class="vlog_title">vlog romance</div>
+</div>
+<div class="vlog_body">
+    <div class="content">
+        <div class="main_view">
+            <div class="title">the title of the video</div>
+            <div class="video">
+                <iframe width="100%" height="345" src="http://www.youtube.com/embed/bIAMrcMOlsA?autoplay=0&amp;cc_load_policy=1&amp;loop=1&amp;playlist=bIAMrcMOlsA" frameborder="0" allowfullscreen=""></iframe>    
+            </div>            
+            <div class="text">
+                There is a long list of benefits of sharing a regular date night with you partner! Couples who take this time to nurture their relationshop with one another are more likely to enjoy high-quality relationships. Regular dates offer couples the opportunity to enjoy each... pany and let go of the stresses that come with day-today life.
+            </div>
+        </div>
+        <!-- items being paged -->
+        <div ng-repeat="item in vlog.items" class="vlog_cell">
+            <div class="cell_text">
+                <div class="title">Idea #{{item}}: Harverst some...</div>
+                <div class="content">There is a long list of benefits of sharing a regular date night with you partner! Couples who take this time to nurture their relationshop with one another are more likely to enjoy high-quality relationships. Regular dates offer couples the opportunity to enjoy each... pany and let go of the stresses that come with day-today life.</div>
+            </div>
+            <div class="cell_video">
+                <iframe width="100%" height="345" src="http://www.youtube.com/embed/bIAMrcMOlsA?autoplay=0&amp;cc_load_policy=1&amp;loop=1&amp;playlist=bIAMrcMOlsA" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- pager -->
+    <ul ng-if="vlog.pager.pages.length" class="pagination">
+        <li ng-class="{disabled:vlog.pager.currentPage === 1}">
+            <a ng-click="vlog.setPage(1)">First</a>
+        </li>
+        <li ng-class="{disabled:vlog.pager.currentPage === 1}">
+            <a ng-click="vlog.setPage(vlog.pager.currentPage - 1)">Previous</a>
+        </li>
+        <li ng-repeat="page in vlog.pager.pages" ng-class="{active:vlog.pager.currentPage === page}">
+            <a ng-click="vlog.setPage(page)">{{page}}</a>
+        </li>
+        <li ng-class="{disabled:vlog.pager.currentPage === vlog.pager.totalPages}">
+            <a ng-click="vlog.setPage(vlog.pager.currentPage + 1)">Next</a>
+        </li>
+        <li ng-class="{disabled:vlog.pager.currentPage === vlog.pager.totalPages}">
+            <a ng-click="vlog.setPage(vlog.pager.totalPages)">Last</a>
+        </li>
+    </ul>
+</div>

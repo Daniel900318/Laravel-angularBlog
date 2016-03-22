@@ -1,1 +1,234 @@
-<p>this is flip</p>
+<div class="flip_header" style="text-align:center">
+    <div class="flip_title">The flipantic book
+        <br> of mona</div>
+</div>
+<div class="flip_body">
+    <div class="title">Lorem Ipsum is simply dummy text</div>
+    <div class="book_wrapper">
+        <div class="bookWrapper">
+            <div class="bookBg">
+                <div class="pageBg centerClass">
+                    <div class="pageWrapper">
+                        <!-- <div id="page6" class="page">
+                            <div class="pageFace front">
+                                <h1>front6</h1>
+                                <img src="http://lorempixel.com/400/200/sports/8/Dummy-Text/">
+                                <div class="pageFoldRight">asdfasd</div>
+                            </div>
+                            <div class="pageFace back">
+                                <h1>back6</h1>
+                                <img src="http://lorempixel.com/400/200/sports/8/Dummy-Text/">
+                                <div class="pageFoldLeft">asdfad</div>
+                            </div>
+                        </div> -->
+                        <div id="page{{page}}" class="page" ng-repeat="page in flip.items">
+                            <div class="pageFace front">
+                                <h1>front{{page}}</h1>
+                                <img src="http://lorempixel.com/400/200/sports/6/Dummy-Text/">
+                                <div class="pageFoldRight">front preview</div>
+                            </div>
+                            <div class="pageFace back">
+                                <h1>back{{page}}</h1>
+                                <img src="http://lorempixel.com/400/200/sports/8/Dummy-Text/">
+                                <div class="pageFoldLeft">back preview</div>
+                            </div>
+                        </div>
+                        <!-- <div id="page1" class="page">
+                            <div class="pageFace front">
+                                <h1>front1</h1>
+                                <img src="http://lorempixel.com/400/200/sports/8/Dummy-Text/">
+                                <div class="pageFoldRight">asdfasd</div>
+                            </div>
+                            <div class="pageFace back">
+                                <h1>back1</h1>
+                                <img src="http://lorempixel.com/400/200/sports/8/Dummy-Text/">
+                                <div class="pageFoldLeft">asdfad</div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+setTimeout(function() {
+    //your code to be executed after 1 seconds
+    var pageLocation = [],
+        lastPage = null;
+    $Zz = 0;
+
+    TweenLite.set(".centerClass", {
+        xPercent: -50,
+        yPercent: -50
+    });
+    TweenLite.set(".pageWrapper", {
+        left: "327px",
+        perspective: 1000
+    });
+    TweenLite.set(".page", {
+        transformStyle: "preserve-3d"
+    });
+    TweenLite.set(".back", {
+        rotationY: -180
+    });
+    TweenLite.set([".back", ".front"], {
+        backfaceVisibility: "hidden"
+    });
+
+    // All pages must have an id assigned to them in the HTML
+    $(".page").click(
+        function() {
+            if (pageLocation[this.id] === undefined || pageLocation[this.id] == "right") {
+                $Zz = ($(".left").length) + 1;
+                TweenMax.to($(this), 1, {
+                    force3D: true,
+                    rotationY: -180,
+                    transformOrigin: "-1px top",
+                    className: '+=left',
+                    z: $Zz,
+                    zIndex: $Zz
+                });
+                TweenLite.set($(this), {
+                    className: '-=right'
+                });
+                pageLocation[this.id] = "left";
+            } else {
+                $Zz = ($(".right").length) + 1;
+                TweenMax.to($(this), 1, {
+                    force3D: true,
+                    rotationY: 0,
+                    transformOrigin: "left top",
+                    className: '+=right',
+                    z: $Zz,
+                    zIndex: $Zz
+                });
+                TweenLite.set($(this), {
+                    className: '-=left'
+                });
+                pageLocation[this.id] = "right";
+            }
+        }
+    );
+
+    $(".front").hover(
+        function() {
+            TweenLite.to($(this).find(".pageFoldRight"), 0.3, {
+                width: "50px",
+                height: "50px",
+                backgroundImage: "linear-gradient(45deg,  #fefefe 0%,#f2f2f2 49%,#ffffff 50%,#ffffff 100%)"
+            });
+        },
+        function() {
+            TweenLite.to($(this).find(".pageFoldRight"), 0.3, {
+                width: "0px",
+                height: "0px"
+            });
+        }
+    );
+
+    $(".back").hover(
+        function() {
+            TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {
+                width: "50px",
+                height: "50px",
+                backgroundImage: "linear-gradient(135deg,  #ffffff 0%,#ffffff 50%,#f2f2f2 51%,#fefefe 100%)"
+            });
+        },
+        function() {
+            TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {
+                width: "0px",
+                height: "0px"
+            });
+        }
+    );
+}, 1000);
+// var pageLocation = [],
+//     lastPage = null;
+// $Zz = 0;
+
+// TweenLite.set(".centerClass", {
+//     xPercent: -50,
+//     yPercent: -50
+// });
+// TweenLite.set(".pageWrapper", {
+//     left: "327px",
+//     perspective: 1000
+// });
+// TweenLite.set(".page", {
+//     transformStyle: "preserve-3d"
+// });
+// TweenLite.set(".back", {
+//     rotationY: -180
+// });
+// TweenLite.set([".back", ".front"], {
+//     backfaceVisibility: "hidden"
+// });
+
+// // All pages must have an id assigned to them in the HTML
+// $(".page").click(
+//     function() {
+//         if (pageLocation[this.id] === undefined || pageLocation[this.id] == "right") {
+//             $Zz = ($(".left").length) + 1;
+//             TweenMax.to($(this), 1, {
+//                 force3D: true,
+//                 rotationY: -180,
+//                 transformOrigin: "-1px top",
+//                 className: '+=left',
+//                 z: $Zz,
+//                 zIndex: $Zz
+//             });
+//             TweenLite.set($(this), {
+//                 className: '-=right'
+//             });
+//             pageLocation[this.id] = "left";
+//         } else {
+//             $Zz = ($(".right").length) + 1;
+//             TweenMax.to($(this), 1, {
+//                 force3D: true,
+//                 rotationY: 0,
+//                 transformOrigin: "left top",
+//                 className: '+=right',
+//                 z: $Zz,
+//                 zIndex: $Zz
+//             });
+//             TweenLite.set($(this), {
+//                 className: '-=left'
+//             });
+//             pageLocation[this.id] = "right";
+//         }
+//     }
+// );
+
+// $(".front").hover(
+//     function() {
+//         TweenLite.to($(this).find(".pageFoldRight"), 0.3, {
+//             width: "50px",
+//             height: "50px",
+//             backgroundImage: "linear-gradient(45deg,  #fefefe 0%,#f2f2f2 49%,#ffffff 50%,#ffffff 100%)"
+//         });
+//     },
+//     function() {
+//         TweenLite.to($(this).find(".pageFoldRight"), 0.3, {
+//             width: "0px",
+//             height: "0px"
+//         });
+//     }
+// );
+
+// $(".back").hover(
+//     function() {
+//         TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {
+//             width: "50px",
+//             height: "50px",
+//             backgroundImage: "linear-gradient(135deg,  #ffffff 0%,#ffffff 50%,#f2f2f2 51%,#fefefe 100%)"
+//         });
+//     },
+//     function() {
+//         TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {
+//             width: "0px",
+//             height: "0px"
+//         });
+//     }
+// );
+</script>
