@@ -1,52 +1,54 @@
+// for build
+// $base_url: '../app/';
+
+// for dev
+$base_url: '';
+
 @font-face {
     font-family: kelson-bold;
-    src: url('components/style/customfont/Kelson Sans Bold RU.otf') format("opentype");   
+    src: url($base_url + 'components/style/customfont/Kelson Sans Bold RU.otf') format("opentype");   
 }
 @font-face {
     font-family: Kelson-light;
-    src: url('components/style/customfont/Kelson Sans Light RU.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/Kelson Sans Light RU.otf') format("opentype");
 }
 @font-face {
     font-family: Kelson-regular;
-    src: url('components/style/customfont/Kelson Sans Regular RU.otf') format("opentype");    
+    src: url($base_url + 'components/style/customfont/Kelson Sans Regular RU.otf') format("opentype");    
 }
 @font-face {
     font-family: myriad-bold;
-    src: url('components/style/customfont/MyriadPro-Bold.otf') format("opentype"); 
+    src: url($base_url + 'components/style/customfont/MyriadPro-Bold.otf') format("opentype"); 
 }
 @font-face {
     font-family: myriad-boldcond;
-    src: url('components/style/customfont/MyriadPro-BoldCond.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-BoldCond.otf') format("opentype");
 }
 @font-face {
     font-family: myriad-boldcondlt;
-    src: url('components/style/customfont/MyriadPro-BoldCondlt.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-BoldCondlt.otf') format("opentype");
 }
 @font-face {
     font-family: myriad-cond;
-    src: url('components/style/customfont/MyriadPro-Cond.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-Cond.otf') format("opentype");
 }
 @font-face {
     font-family: myriad-condlt;
-    src: url('components/style/customfont/MyriadPro-Condlt.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-Condlt.otf') format("opentype");
 }
 @font-face {
     font-family: myriad-lt;
-    src: url('components/style/customfont/MyriadPro-It.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-It.otf') format("opentype");
 }
 @font-face {
     font-family: myriad-regular;
-    src: url('components/style/customfont/MyriadPro-regular.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-regular.otf') format("opentype");
 }
 @font-face {
     font-family: myriad-semibold;
-    src: url('components/style/customfont/Myriadpro-Semibold.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/Myriadpro-Semibold.otf') format("opentype");
 }
 @font-face {
     font-family: myriad-semiboldlt;
-    src: url('components/style/customfont/Myriadpro-Semiboldlt.otf') format("opentype");
-}
-
-.font-test{
-	font-family: 'myriad-condlt';
+    src: url($base_url + 'components/style/customfont/Myriadpro-Semiboldlt.otf') format("opentype");
 }

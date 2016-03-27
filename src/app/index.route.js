@@ -22,7 +22,7 @@
             })
             .state('home.beauty', {
                 url: '/beauty',
-                templateUrl: 'app/patial//beauty/beauty.html',
+                templateUrl: 'app/patial/beauty/beauty.html',
                 controller: 'BeautyController',
                 controllerAs: 'beauty'
             })
@@ -54,7 +54,7 @@
                 url: '/romantic',
                 templateUrl: 'app/patial/romantic/romantic.html',
                 controller: 'RomanticController',
-                controllerAs: 'romantic'
+                controllerAs: 'rom'
             })
             .state('home.vlog', {
                 url: '/vlog',

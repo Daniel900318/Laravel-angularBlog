@@ -4,6 +4,8 @@ $a_border: #8e8e8e;
 $a_color: #ca58b8;
 $a_hover: #60a6ff;
 $p_color: #b5b6b0;
+
+$body_width: 87%;
 // 
 %extend_1 {
 	background-size: 429px 82px;
@@ -65,15 +67,19 @@ $p_color: #b5b6b0;
 	top: 368px;
 	width: 100%;
 	z-index: 10;
+	#ugly_navbar{
+		// padding-left: 0px;
+		// padding-right: 0px;
+	}
 	.navbar.navbar-inverse{
 		border: 1px $border solid;
-	    width: 85%;
+	    width: $body_width;
 	    margin: 0px auto;
 	    border-radius: 0px;
 	}
 	li>a{
 		border-right: 1px $a_border solid;
-	    margin: 14px 6px;
+	    margin: 14px 4px;
 	    padding: 1px 5px;
 	    font-weight: 400;
 	    color: white;	    

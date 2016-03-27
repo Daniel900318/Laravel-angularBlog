@@ -1,3 +1,9 @@
+// for build
+$base_url: '../app/';
+
+// for dev
+$base_url: '';
+
 /**
  *  If you want to override some bootstrap variables, you have to change values here.
  *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
@@ -55,6 +61,8 @@ $home_cell_title: #656565;
 $home_cell_text: #9a9a98;
 $beauty_title: #656565;
 $beauty_text: #9a9a98;
+
+$body_width: 87%;
 #landing {
     background: url(../assets/landing.png) no-repeat;
     background-size: 100% auto;
@@ -80,6 +88,7 @@ $beauty_text: #9a9a98;
     position: relative;
     background: url(../assets/main_back.png) no-repeat;
     background-size: 100% 100%;
+    z-index: 0;
     .main_body {
         min-height: 325px;
         .home_header {
@@ -109,21 +118,21 @@ $beauty_text: #9a9a98;
         }
         .home_body {
             clear: both;
-            width: 85%;
+            width: $body_width;
             margin: 0px auto;
-            background: #d5e3f5;
+            // background: #d5e3f5;
             text-align: right;
             .home_cell {
                 width: 100%;
-                height: 320px;
+                min-height: 320px;
                 overflow: hidden;
                 .cell_text {
                     float: left;
                     width: 50%;
-                    height: 100%;
-                    background: white;
+                    height: 100%;                    
                     padding: 54px 50px;
                     text-align: left;
+                    min-height: 320px;
                     .title {
                         font-family: Kelson-regular;
                         font-size: 31px;
@@ -137,32 +146,57 @@ $beauty_text: #9a9a98;
                     }
                 }
                 .cell_img {
-                    float: left;
-                    width: 50%;
+                    width: 55%;
                     >img {
                         width: 100%;
+                        max-height: 100%;
+                        height: 320px;
                     }
                 }
                 &:nth-child(odd) {
                     .cell_text {
                         float: left;
+                        background: url(../assets/images/l-left.png) no-repeat;
+                        background-size: cover;
+                        z-index: 4;
                     }
                     .cell_img {
                         float: right;
+                        margin-left: -5%;
+                        z-index: -1;
+                        position: relative;
                     }
                 }
                 &:nth-child(even) {
                     .cell_text {
                         float: right;
+                        background: url(../assets/images/l-right.png) no-repeat;
+                        background-size: cover;
+                        z-index: 4;
                     }
                     .cell_img {
                         float: left;
+                        margin-right: -5%;
+                        z-index: -1;
+                        position: relative;
                     }
                 }
+                @media screen and (max-width: 768px){
+                    .cell_text, .cell_img{
+                        width: 100%;
+                        background: white!important;
+                    }
+                }
+                
             }
             .pagination {
                 clear: both;
-                margin-right: 10px;
+                width: 100%;
+                background: #d5e3f5;
+                margin: 0px;
+                padding: 17px;
+                border-radius: 0px;
+                padding-left: 40%;
             }
         }
         .beauty_header {
@@ -182,7 +216,7 @@ $beauty_text: #9a9a98;
         }
         .beauty_body {
             clear: both;
-            width: 85%;
+            width: $body_width;
             margin: 0px auto;
             background: white;
             .main_img {
@@ -338,7 +372,224 @@ $beauty_text: #9a9a98;
                 text-transform: uppercase;
             }
         }
-        .rom_body {}
+        .rom_body {
+            width: $body_width;
+            margin: 0px auto;
+            background: #d5e3f5;
+            text-align: right;
+            .filter_body {
+                width: 100%;
+                float: left;
+                .filter_cell {
+                    position: relative;
+                    width: 25%;
+                    float: left;
+                    background: url(../assets/romantic_movies_cover.png) no-repeat;
+                    padding: 70px 0px;
+                    background-size: 100% 100%;
+                    cursor: pointer;
+                    .odd{
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        position: absolute;
+                        top: 0px;
+                        opacity: 0.1;
+                        &:hover{
+                            opacity: 0;
+                        }
+                        &.active{
+                            opacity: 0;
+                        }
+                    }
+                    .even{
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        position: absolute;
+                        top: 0px;
+                        opacity: 0.1;
+                        &:hover{
+                            opacity: 0;
+                        }
+                        &.active{
+                            opacity: 0;
+                        }
+                    }
+                    .btn {
+                        position: absolute;
+                        color: white;
+                        font-family: myriad-regular;
+                        font-size: 20px;
+                        padding: 7px 13px;
+                        bottom: 0px;
+                        left: 0px;
+                        width: 100%;
+                        background: #783ca1;
+                        border-radius: 0px;
+                        &.bodd{
+
+                        }
+                        &.beven{
+                            background: #cb40a4;
+                        }
+                    }
+                }
+            }
+            .main_body {
+                width: 100%;
+                float: left;
+                background: #e2e2e2;
+                .con_body {
+                    width: 70%;
+                    float: left;
+                    background: white;
+                    padding: 20px 53px 53px 53px;
+                    .rom_cell {
+                        float: left;
+                        margin-top: 27px;
+                        cursor: pointer;
+                        .cell_text {
+                            text-align: left;
+                            width: 50%;
+                            float: left;
+                            padding: 27px 20px 10px 0px;
+                            .title {
+                                font-family: Kelson-regular;
+                                font-size: 31px;
+                                color: #656565;
+                                margin-bottom: 10px;
+                                cursor: pointer;
+                                &:hover {
+                                    color: #508bd6;
+                                }
+                            }
+                            .content {
+                                font-family: myriad-regular;
+                                font-size: 17px;
+                                color: #9a9a98;
+                                padding: 0px;
+                                overflow: hidden;
+                            }
+                        }
+                        .cell_img {
+                            width: 50%;
+                            float: right;
+                            >img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .social {
+                width: 30%;
+                float: left;
+                padding: 25px 25px;
+                text-align: left;
+                .title {
+                    color: #260058;
+                    font-family: myriad-bold;
+                    font-size: 19px;
+                    border-bottom: 1px #b5b3b3 solid;
+                    padding: 1px;
+                    margin-bottom: 10px;
+                }
+                .googlepp {
+                    background: white;
+                    padding: 4px 4px;
+                    margin-bottom: 2px;
+                    .icon {
+                        background: url(../assets/social_small.png) no-repeat;
+                        background-size: 173px 72px;
+                        background-position: -1px -42px;
+                        padding: 4px 14px;
+                        margin-right: 5px;
+                    }
+                }
+                .twitter {
+                    background: white;
+                    padding: 4px 4px;
+                    margin-bottom: 2px;
+                    .icon {
+                        background: url(../assets/social_small.png) no-repeat;
+                        background-size: 173px 72px;
+                        background-position: -58px -42px;
+                        padding: 4px 14px;
+                        margin-right: 5px;
+                    }
+                }
+                .pin {
+                    background: white;
+                    padding: 4px 4px;
+                    margin-bottom: 12px;
+                    .icon {
+                        background: url(../assets/social_small.png) no-repeat;
+                        background-size: 173px 72px;
+                        background-position: -30px -42px;
+                        padding: 4px 14px;
+                        margin-right: 5px;
+                    }
+                }
+                .text {
+                    font-family: myriad-regularl;
+                    color: #b5b3b3;
+                    font-size: 11px;
+                }
+                .social_group {
+                    float: left;
+                    span {
+                        float: left;
+                        background: url(../assets/social_small.png) no-repeat;
+                        background-size: 173px 72px;
+                        padding: 10px 10px;
+                        margin: 1px 2px;
+                        cursor: pointer;
+                    }
+                    .so_1 {
+                        background-position: -1px -1px;
+                    }
+                    .so_2 {
+                        background-position: -23px -0px
+                    }
+                    .so_3 {
+                        background-position: -42px -0px;
+                    }
+                    .so_4 {
+                        background-position: -63px -0px;
+                    }
+                    .so_5 {
+                        background-position: -85px -0px;
+                    }
+                    .so_6 {
+                        background-position: -107px -0px;
+                    }
+                    .so_7 {
+                        background-position: -127px -0px;
+                    }
+                    .so_8 {
+                        background-position: -147px -0px;
+                    }
+                    .so_9 {
+                        background-position: -1px -21px;
+                    }
+                    .so_10 {
+                        background-position: -22px -21px;
+                    }
+                    .so_11 {
+                        background-position: -43px -21px;
+                    }
+                }
+                .tag_body {
+                    border-bottom: 1px #b5b3b3 solid;
+                    padding: 5px 0px 13px 0px;
+                    >a {
+                        background: #b5b3b3;
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
         .vlog_header {
             min-height: 360px;
             position: relative;
@@ -355,7 +606,7 @@ $beauty_text: #9a9a98;
             }
         }
         .vlog_body {
-            width: 85%;
+            width: $body_width;
             margin: 0px auto;
             background: #d5e3f5;
             text-align: right;
@@ -427,7 +678,7 @@ $beauty_text: #9a9a98;
             }
         }
         .photo_body {
-            width: 85%;
+            width: $body_width;
             margin: 0px auto;
             background: #d5e3f5;
             text-align: right;
@@ -475,7 +726,7 @@ $beauty_text: #9a9a98;
         }
         .life_body {
             clear: both;
-            width: 85%;
+            width: $body_width;
             margin: 0px auto;
             background: white;
             .main_img {
@@ -603,59 +854,66 @@ $beauty_text: #9a9a98;
         }
         .flip_body {
             clear: both;
-            width: 85%;
+            width: $body_width;
             margin: 0px auto;
             background: white;
-            .title{
+            .title {
                 font-family: Kelson-regular;
                 font-size: 31px;
                 color: #656565;
                 margin: 0px 10px -17px 40px;
                 padding-top: 20px;
             }
-            .book_wrapper{
+            .book_wrapper {
                 padding: 30PX;
             }
             .bookWrapper {
-                width: 700px;
-                height: 450px; //multiply by 1.3 to get proper height
+                width: 85%;
+                height: 550px; //multiply by 1.3 to get proper height
                 margin: 0px auto;
             }
             .bookBg {
-                position: relative;
-                background-color: #000000;
+                // position: relative;
+                // background-color: #000000;
                 width: 100%;
                 height: 100%;
-                border-radius: 12px;
+                // border-radius: 12px;
+                margin: 0 auto;
+                // padding-top: 50px;
+                // width: 905px;
+                // height: 600px;
+                position: relative;
+                background: transparent url(../assets/images/bg.png) no-repeat;
+                background-size: cover;
             }
             .centerClass {
                 position: absolute;
-                left: 50%;
-                top: 50%;
+                left: 51.5%;
+                top: 47%;
             }
             .pageBg {
                 background-color: #ffffff;
-                width: 652px;
-                height: 422px;
+                width: 80%;
+                height: 83%;
                 border-radius: 0px;
             }
             .spineCenter {
                 width: 2px;
-                height: 422px;
+                height: 530px;
                 border-radius: 0px;
                 background: rgba(101, 101, 101, .4);
             }
             .pageWrapper {
                 position: relative;
-                width: 325px;
-                height: 422px;
+                width: 65%;
+                height: 100%;
                 float: left;
                 -webkit-font-smoothing: antialiased;
             }
             .pageFace {
                 position: absolute;
-                width: 325px;
-                height: 422px;
+                width: 80%;
+                // height: 530px;
                 overflow: hidden;
                 text-align: center;
             }
