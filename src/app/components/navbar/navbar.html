@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="ugly_navbar">
             <ul class="nav navbar-nav">
                 <li ng-repeat="menu in vm.tabMenu">
-                    <a href="" class="bmd-ripple" ng-click="vm.goTab($index)" ng-class="{active : vm.isActive($index)}">{{menu}}</a>
+                    <a href="" class="bmd-ripple" ng-click="vm.goTab($index)" ng-class="{active : vm.isActive($index), isactive : vm.curentActive($index)}">{{menu}}</a>
                 </li>
             </ul> 
         </div>

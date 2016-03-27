@@ -21,7 +21,7 @@
         return directive;
 
         /** @ngInject */
-        function NavbarController(moment, $state) {
+        function NavbarController(moment, $state, $location, $log) {
             var vm = this;
 
             // "vm.creation" is avaible by directive option "bindToController: true"
@@ -43,10 +43,36 @@
             }
 
             vm.isActive = function(index){
-                if(vm.currentTab == index) {
-                    return true
-                } else return false
+                // if(vm.currentTab == index) {
+                //     return true
+                // } else return false
+            }            
+            vm.curentActive = function(index){
+                var path = $location.path()
+                $log.log('path-->', path)
+                if(path == '/home/home'){
+                    if(index == 0) return true
+                }
+                if(path == '/home/beauty'){
+                    if(index == 1) return true
+                }
+                if(path == '/home/romantic'){
+                    if(index == 2) return true
+                }
+                if(path == '/home/vlog'){
+                    if(index == 3) return true
+                }
+                if(path == '/home/photograph'){
+                    if(index == 4) return true
+                }
+                if(path == '/home/life'){
+                    if(index == 5) return true
+                }
+                if(path == '/home/flip'){
+                    if(index == 6) return true
+                }
             }
+            vm.curentActive()
         }
     }
 
