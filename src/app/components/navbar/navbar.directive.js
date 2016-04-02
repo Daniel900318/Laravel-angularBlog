@@ -49,7 +49,7 @@
             }            
             vm.curentActive = function(index){
                 var path = $location.path()
-                $log.log('path-->', path)
+                // $log.log('path-->', path)
                 if(path == '/home/home'){
                     if(index == 0) return true
                 }
