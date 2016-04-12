@@ -1,33 +1,54 @@
 <div class="photo_header" style="text-align:center">
-	<div class="photo_title">Photographs <br>
-	& loves</div>
-</div>
-<div class="photo_body">
-	<div ng-repeat="item in photo.items" class="photo_cell">
-		<div class="cell_img">
-        	<img src="./assets/photo/1.png">
-        </div>
-        <div class="cell_text">
-            <div class="title">Idea #{{item}}: Harverst some...</div>
-            <div class="content">There is a long list of benefits of sharing a regular date night with you partner! Couples who take this time to nurture their relationshop with one another are more likely to enjoy high-quality relationships. Regular dates offer couples the opportunity to enjoy each... pany and let go of the stresses that come with day-today life.</div>
-        </div>        
+    <div class="photo_title">
+        Photographs
+        <br>
+            & loves
+        </br>
     </div>
-    <!-- pager -->
-    <ul ng-if="photo.pager.pages.length" class="pagination">
-        <li ng-class="{disabled:photo.pager.currentPage === 1}">
-            <a ng-click="photo.setPage(1)">First</a>
-        </li>
-        <li ng-class="{disabled:photo.pager.currentPage === 1}">
-            <a ng-click="photo.setPage(photo.pager.currentPage - 1)">Previous</a>
-        </li>
-        <li ng-repeat="page in photo.pager.pages" ng-class="{active:photo.pager.currentPage === page}">
-            <a ng-click="photo.setPage(page)">{{page}}</a>
-        </li>
-        <li ng-class="{disabled:photo.pager.currentPage === photo.pager.totalPages}">
-            <a ng-click="photo.setPage(photo.pager.currentPage + 1)">Next</a>
-        </li>
-        <li ng-class="{disabled:photo.pager.currentPage === photo.pager.totalPages}">
-            <a ng-click="photo.setPage(photo.pager.totalPages)">Last</a>
-        </li>
-    </ul>
+</div>
+<div class="container">
+    <div class="photo_body wrapper">
+        <div class="photo_cell" ng-repeat="item in photo.items">
+            <div class="cell_img">
+                <img src="./assets/photo/1.png">
+                </img>
+            </div>
+            <div class="cell_text">
+                <div class="title">
+                    Idea #{{item}}: Harverst some...
+                </div>
+                <div class="content">
+                    There is a long list of benefits of sharing a regular date night with you partner! Couples who take this time to nurture their relationshop with one another are more likely to enjoy high-quality relationships. Regular dates offer couples the opportunity to enjoy each... pany and let go of the stresses that come with day-today life.
+                </div>
+            </div>
+        </div>
+        <!-- pager -->
+        <ul class="pagination" ng-if="photo.pager.pages.length">
+            <li ng-class="{disabled:photo.pager.currentPage === 1}">
+                <a ng-click="photo.setPage(1)">
+                    First
+                </a>
+            </li>
+            <li ng-class="{disabled:photo.pager.currentPage === 1}">
+                <a ng-click="photo.setPage(photo.pager.currentPage - 1)">
+                    Previous
+                </a>
+            </li>
+            <li ng-class="{active:photo.pager.currentPage === page}" ng-repeat="page in photo.pager.pages">
+                <a ng-click="photo.setPage(page)">
+                    {{page}}
+                </a>
+            </li>
+            <li ng-class="{disabled:photo.pager.currentPage === photo.pager.totalPages}">
+                <a ng-click="photo.setPage(photo.pager.currentPage + 1)">
+                    Next
+                </a>
+            </li>
+            <li ng-class="{disabled:photo.pager.currentPage === photo.pager.totalPages}">
+                <a ng-click="photo.setPage(photo.pager.totalPages)">
+                    Last
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

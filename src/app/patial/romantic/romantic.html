@@ -1,88 +1,149 @@
 <div class="rom_header" style="text-align:center">
-	<div class="rom_title">The Romantic Power <br>
-	of Movies</div>
+    <div class="rom_title">
+        The Romantic Power
+        <br>
+            of Movies
+        </br>
+    </div>
 </div>
-<div class="rom_body">
-	<div class="filter_body">
-		<div class="filter_cell">
-			<div class="odd "></div>
-			<div class="btn bmd-ripple bodd">Happy Full Moon</div>
-		</div>
-		<div class="filter_cell">
-			<div class="even active"></div>
-			<div class="btn bmd-ripple beven">Happy Full Moon</div>
-		</div>
-		<div class="filter_cell">
-			<div class="odd"></div>
-			<div class="btn bmd-ripple bodd">Happy Full Moon</div>
-		</div>
-		<div class="filter_cell">
-			<div class="even"></div>
-			<div class="btn bmd-ripple beven">Happy Full Moon</div>
-		</div>
-	</div>
-	<!-- items being paged -->
-	<div class="main_body">
-		<div class="con_body">
-			<div ng-repeat="item in rom.items" class="rom_cell">
-		        <div class="cell_text">
-		            <div class="title">Idea #{{item}}: Harverst some...</div>
-		            <div class="content">There is a long list of benefits of sharing a regular date night with you partner!</div>
-		        </div>
-		        <div class="cell_img">
-		            <img src="./assets/rom/1.png">
-		        </div>
-		    </div>	
-		</div>
-		<div class="social">
-			<div class="title">Social Counters</div>
-			<div class="googlepp">
-				<span class='icon'></span>
-				<span class='text'>Fans</span>
-			</div>
-			<div class="twitter">
-				<span class='icon'></span>
-				<span class='text'>Followers</span>
-			</div>
-			<div class="pin">
-				<span class='icon'></span>
-				<span class='text'>Subscribers</span>
-			</div>
-			<div class="title">See More</div>
-			<div class="social_group">
-				<span class="so_1 bmd-ripple"></span>
-				<span class="so_2 bmd-ripple"></span>
-				<span class="so_3 bmd-ripple"></span>
-				<span class="so_4 bmd-ripple"></span>
-				<span class="so_5 bmd-ripple"></span>
-				<span class="so_6 bmd-ripple"></span>
-				<span class="so_7 bmd-ripple"></span>
-				<span class="so_8 bmd-ripple"></span>
-				<span class="so_9 bmd-ripple"></span>
-				<span class="so_10 bmd-ripple"></span>
-				<span class="so_11 bmd-ripple"></span>
-			</div>
-			<div class="title">Tags</div>
-			<div class="tag_body">
-				 <a class="btn btn-default bmd-ripple bmd-ink-grey-400" ng-repeat="tag in rom.tags">{{tag}}</a>
-			</div>
-		</div>	
-	</div>
-	<ul ng-if="rom.pager.pages.length" class="pagination">
-        <li ng-class="{disabled:rom.pager.currentPage === 1}">
-            <a ng-click="rom.setPage(1)">First</a>
-        </li>
-        <li ng-class="{disabled:rom.pager.currentPage === 1}">
-            <a ng-click="rom.setPage(rom.pager.currentPage - 1)">Previous</a>
-        </li>
-        <li ng-repeat="page in rom.pager.pages" ng-class="{active:rom.pager.currentPage === page}">
-            <a ng-click="rom.setPage(page)">{{page}}</a>
-        </li>
-        <li ng-class="{disabled:rom.pager.currentPage === rom.pager.totalPages}">
-            <a ng-click="rom.setPage(rom.pager.currentPage + 1)">Next</a>
-        </li>
-        <li ng-class="{disabled:vlog.pager.currentPage === vlog.pager.totalPages}">
-            <a ng-click="vlog.setPage(vlog.pager.totalPages)">Last</a>
-        </li>
-    </ul>
+<div class="container">
+    <div class="rom_body wrapper">
+        <div class="filter_body">
+            <div class="filter_cell">
+                <div class="odd ">
+                </div>
+                <div class="btn bmd-ripple bodd">
+                    Happy Full Moon
+                </div>
+            </div>
+            <div class="filter_cell">
+                <div class="even active">
+                </div>
+                <div class="btn bmd-ripple beven">
+                    Happy Full Moon
+                </div>
+            </div>
+            <div class="filter_cell">
+                <div class="odd">
+                </div>
+                <div class="btn bmd-ripple bodd">
+                    Happy Full Moon
+                </div>
+            </div>
+            <div class="filter_cell">
+                <div class="even">
+                </div>
+                <div class="btn bmd-ripple beven">
+                    Happy Full Moon
+                </div>
+            </div>
+        </div>
+        <!-- items being paged -->
+        <div class="main_body">
+            <div class="con_body">
+                <div class="rom_cell" ng-repeat="item in rom.items">
+                    <div class="cell_text">
+                        <div class="title">
+                            Idea #{{item}}: Harverst some...
+                        </div>
+                        <div class="content">
+                            There is a long list of benefits of sharing a regular date night with you partner!
+                        </div>
+                    </div>
+                    <div class="cell_img">
+                        <img src="./assets/rom/1.png">
+                        </img>
+                    </div>
+                </div>
+            </div>
+            <div class="social">
+                <div class="title">
+                    Social Counters
+                </div>
+                <div class="googlepp">
+                    <span class="icon">
+                    </span>
+                    <span class="text">
+                        Fans
+                    </span>
+                </div>
+                <div class="twitter">
+                    <span class="icon">
+                    </span>
+                    <span class="text">
+                        Followers
+                    </span>
+                </div>
+                <div class="pin">
+                    <span class="icon">
+                    </span>
+                    <span class="text">
+                        Subscribers
+                    </span>
+                </div>
+                <div class="title">
+                    See More
+                </div>
+                <div class="social_group">
+                    <span class="so_1 bmd-ripple">
+                    </span>
+                    <span class="so_2 bmd-ripple">
+                    </span>
+                    <span class="so_3 bmd-ripple">
+                    </span>
+                    <span class="so_4 bmd-ripple">
+                    </span>
+                    <span class="so_5 bmd-ripple">
+                    </span>
+                    <span class="so_6 bmd-ripple">
+                    </span>
+                    <span class="so_7 bmd-ripple">
+                    </span>
+                    <span class="so_8 bmd-ripple">
+                    </span>
+                    <span class="so_9 bmd-ripple">
+                    </span>
+                    <span class="so_10 bmd-ripple">
+                    </span>
+                    <span class="so_11 bmd-ripple">
+                    </span>
+                </div>
+                <div class="title">
+                    Tags
+                </div>
+                <div class="tag_body">
+                    <a class="btn btn-default bmd-ripple bmd-ink-grey-400" ng-repeat="tag in rom.tags">
+                        {{tag}}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <ul class="pagination" ng-if="rom.pager.pages.length">
+            <li ng-class="{disabled:rom.pager.currentPage === 1}">
+                <a ng-click="rom.setPage(1)">
+                    First
+                </a>
+            </li>
+            <li ng-class="{disabled:rom.pager.currentPage === 1}">
+                <a ng-click="rom.setPage(rom.pager.currentPage - 1)">
+                    Previous
+                </a>
+            </li>
+            <li ng-class="{active:rom.pager.currentPage === page}" ng-repeat="page in rom.pager.pages">
+                <a ng-click="rom.setPage(page)">
+                    {{page}}
+                </a>
+            </li>
+            <li ng-class="{disabled:rom.pager.currentPage === rom.pager.totalPages}">
+                <a ng-click="rom.setPage(rom.pager.currentPage + 1)">
+                    Next
+                </a>
+            </li>
+            <li ng-class="{disabled:vlog.pager.currentPage === vlog.pager.totalPages}">
+                <a ng-click="vlog.setPage(vlog.pager.totalPages)">
+                    Last
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

@@ -1,210 +1,209 @@
 <div class="flip_header" style="text-align:center">
-    <div class="flip_title">The flipantic book
-        <br> of mona</div>
+    <div class="flip_title">
+        The flipantic book
+        <br> of mona
+        </br>
+    </div>
 </div>
-<div class="flip_body">
-    <div class="title">Lorem Ipsum is simply dummy text</div>
-    <div class="book_wrapper">
-        <div class="bookWrapper">
-            <div class="bookBg">
-                <div class="pageBg centerClass">
-                    <div class="pageWrapper">
-                        <div id="page{{page}}" class="page" ng-repeat="page in flip.items">
-                            <div class="pageFace front">
-                                <h1>front{{page}}</h1>
-                                <img src="http://lorempixel.com/400/200/sports/6/Dummy-Text/">
-                                <div class="pageFoldRight">front preview</div>
-                            </div>
-                            <div class="pageFace back">
-                                <h1>back{{page}}</h1>
-                                <img src="http://lorempixel.com/400/200/sports/8/Dummy-Text/">
-                                <div class="pageFoldLeft">back preview</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="container">
+    <div class="flip_body wrapper">
+        <div class="title">
+            Lorem Ipsum is simply dummy text
+        </div>
+        <div class="book_wrapper">
+            <div id="book" style="">
             </div>
+            <div id="controls">
+                <label id="flip_prev">Prev</label>
+                <label for="page-number">Page:</label>
+                <label class="bmd-field-group">
+                    <input type="number" class="bmd-input" required="" id="page-number">
+                    <span class="bmd-bar"></span>
+                    <span class="bmd-field-feedback"></span>
+                </label> of <span id="number-pages">19</span>
+                <label id="flip_next">Next</label>
+            </div>
+            <script id="my_script" type="text/javascript">
+            // Sample using dynamic pages with turn.js
+
+            var numberOfPages = 0;
+
+            // var url = 'pdf/test.pdf';
+            var url = 'pdf/21.pdf';
+
+            var rendered = [];
+            var firstPagesRendered = false;
+
+
+
+            var pdf = null,
+                pageNum = 1,
+                scale = 0.8;
+
+            function renderPage(num) {
+
+                pdf.getPage(num).then(function(page) {
+                    var scale = 0.8;
+                    var viewport = page.getViewport(scale);
+
+                    //
+                    // Prepare canvas using PDF page dimensions
+                    //
+                    var canvasID = 'canv' + num;
+                    var canvas = document.getElementById(canvasID);
+                    if (canvas == null) return;
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    //
+                    // Render PDF page into canvas context
+                    //
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext);
+
+                    // Update page counters
+                    document.getElementById('page-number').textContent = pageNum;
+                    document.getElementById('number-pages').textContent = pdf.numPages;
+                })
+            }
+
+
+            // Adds the pages that the book will need
+            function addPage(page, book) {
+                //  First check if the page is already in the book
+                if (!book.turn('hasPage', page)) {
+
+                    /*
+                    var element = $('<div />', {'class': 'page '+((page%2==0) ? 'odd' : 'even'), 'id': 'page-'+page}).html('<i class="loader"></i>');
+                    // If not then add the page
+                    book.turn('addPage', element, page);
+                    // Let's assum that the data is comming from the server and the request takes 1s.
+                    setTimeout(function(){
+                            element.html('<div class="data">Data for page '+page+'</div>');
+                    }, 1000);
+                    */
+                    ///*
+                    // Create an element for this page
+                    var element = $('<div />', {
+                        'class': 'page ' + ((page % 2 == 0) ? 'odd' : 'even'),
+                        'id': 'page-' + page
+                    })
+                    element.html('<div class="data"><canvas id="canv' + page + '"></canvas></div>');
+                    // element.html('<div><i>test</i></div>');
+                    // If not then add the page
+                    book.turn('addPage', element, page);
+                    // renderPage(page);
+                    //*/
+                }
+            }
+
+
+
+            $(window).ready(function() {
+
+                PDFJS.disableWorker = true;
+
+                PDFJS.getDocument(url).then(function(pdfDoc) {
+
+                    numberOfPages = pdfDoc.numPages;
+                    pdf = pdfDoc;
+                    $('#book').turn.pages = numberOfPages;
+
+
+                    $('#book').turn({
+                        acceleration: false,
+                        pages: numberOfPages,
+                        elevation: 50,
+                        gradients: !$.isTouch,
+                        // display: 'single',
+                        when: {
+                            turning: function(e, page, view) {
+
+                                // Gets the range of pages that the book needs right now
+                                var range = $(this).turn('range', page);
+
+                                // Check if each page is within the book
+                                for (page = range[0]; page <= range[1]; page++) {
+                                    addPage(page, $(this));
+                                    //renderPage(page);
+                                };
+
+                            },
+
+                            turned: function(e, page) {
+                                $('#page-number').val(page);
+
+                                if (firstPagesRendered) {
+                                    var range = $(this).turn('range', page);
+                                    for (page = range[0]; page <= range[1]; page++) {
+                                        if (!rendered[page]) {
+                                            renderPage(page);
+                                            rendered[page] = true;
+                                        }
+                                    };
+                                }
+
+                            }
+                        }
+                    });
+
+                    $('#number-pages').html(numberOfPages);
+
+                    $('#page-number').keydown(function(e) {
+
+                        var p = $('#page-number').val();
+                        if (e.keyCode == 13) {
+                            $('#book').turn('page', p);
+                            renderPage(p);
+                        }
+
+                    });
+                    $('#flip_prev').click(function() {
+                        var p = $('#page-number').val();
+                        if (p > 3) {
+                            p = p - 2;
+                            document.getElementById('page-number').textContent = p;
+                            $('#book').turn('page', p);
+                            renderPage(p);
+                        };
+                    });
+
+                    $('#flip_next').click(function() {
+                        var p = $('#page-number').val();
+                        p = parseInt(p) + 2;
+                        document.getElementById('page-number').textContent = p;
+                        $('#book').turn('page', p);
+                        renderPage(p);
+                    });
+
+                    var n = numberOfPages;
+                    if (n > 6) n = 6;
+                    for (page = 1; page <= n; page++) {
+                        renderPage(page);
+                        rendered[page] = true;
+                    };
+                    firstPagesRendered = true;
+
+
+                });
+
+
+            });
+
+            $(window).bind('keydown', function(e) {
+
+                if (e.target && e.target.tagName.toLowerCase() != 'input')
+                    if (e.keyCode == 37)
+                        $('#book').turn('previous');
+                    else if (e.keyCode == 39)
+                    $('#book').turn('next');
+
+            });
+            </script>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-setTimeout(function() {
-    //your code to be executed after 1 seconds
-    var pageLocation = [],
-        lastPage = null;
-    $Zz = 0;
-
-    TweenLite.set(".centerClass", {
-        xPercent: -50,
-        yPercent: -50
-    });
-    TweenLite.set(".pageWrapper", {
-        left: "327px",
-        perspective: 1000
-    });
-    TweenLite.set(".page", {
-        transformStyle: "preserve-3d"
-    });
-    TweenLite.set(".back", {
-        rotationY: -180
-    });
-    TweenLite.set([".back", ".front"], {
-        backfaceVisibility: "hidden"
-    });
-
-    // All pages must have an id assigned to them in the HTML
-    $(".page").click(
-        function() {
-            if (pageLocation[this.id] === undefined || pageLocation[this.id] == "right") {
-                $Zz = ($(".left").length) + 1;
-                TweenMax.to($(this), 1, {
-                    force3D: true,
-                    rotationY: -180,
-                    transformOrigin: "-1px top",
-                    className: '+=left',
-                    z: $Zz,
-                    zIndex: $Zz
-                });
-                TweenLite.set($(this), {
-                    className: '-=right'
-                });
-                pageLocation[this.id] = "left";
-            } else {
-                $Zz = ($(".right").length) + 1;
-                TweenMax.to($(this), 1, {
-                    force3D: true,
-                    rotationY: 0,
-                    transformOrigin: "left top",
-                    className: '+=right',
-                    z: $Zz,
-                    zIndex: $Zz
-                });
-                TweenLite.set($(this), {
-                    className: '-=left'
-                });
-                pageLocation[this.id] = "right";
-            }
-        }
-    );
-
-    $(".front").hover(
-        function() {
-            TweenLite.to($(this).find(".pageFoldRight"), 0.3, {
-                width: "50px",
-                height: "50px",
-                backgroundImage: "linear-gradient(45deg,  #fefefe 0%,#f2f2f2 49%,#ffffff 50%,#ffffff 100%)"
-            });
-        },
-        function() {
-            TweenLite.to($(this).find(".pageFoldRight"), 0.3, {
-                width: "0px",
-                height: "0px"
-            });
-        }
-    );
-
-    $(".back").hover(
-        function() {
-            TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {
-                width: "50px",
-                height: "50px",
-                backgroundImage: "linear-gradient(135deg,  #ffffff 0%,#ffffff 50%,#f2f2f2 51%,#fefefe 100%)"
-            });
-        },
-        function() {
-            TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {
-                width: "0px",
-                height: "0px"
-            });
-        }
-    );
-}, 1000);
-// var pageLocation = [],
-//     lastPage = null;
-// $Zz = 0;
-
-// TweenLite.set(".centerClass", {
-//     xPercent: -50,
-//     yPercent: -50
-// });
-// TweenLite.set(".pageWrapper", {
-//     left: "327px",
-//     perspective: 1000
-// });
-// TweenLite.set(".page", {
-//     transformStyle: "preserve-3d"
-// });
-// TweenLite.set(".back", {
-//     rotationY: -180
-// });
-// TweenLite.set([".back", ".front"], {
-//     backfaceVisibility: "hidden"
-// });
-
-// // All pages must have an id assigned to them in the HTML
-// $(".page").click(
-//     function() {
-//         if (pageLocation[this.id] === undefined || pageLocation[this.id] == "right") {
-//             $Zz = ($(".left").length) + 1;
-//             TweenMax.to($(this), 1, {
-//                 force3D: true,
-//                 rotationY: -180,
-//                 transformOrigin: "-1px top",
-//                 className: '+=left',
-//                 z: $Zz,
-//                 zIndex: $Zz
-//             });
-//             TweenLite.set($(this), {
-//                 className: '-=right'
-//             });
-//             pageLocation[this.id] = "left";
-//         } else {
-//             $Zz = ($(".right").length) + 1;
-//             TweenMax.to($(this), 1, {
-//                 force3D: true,
-//                 rotationY: 0,
-//                 transformOrigin: "left top",
-//                 className: '+=right',
-//                 z: $Zz,
-//                 zIndex: $Zz
-//             });
-//             TweenLite.set($(this), {
-//                 className: '-=left'
-//             });
-//             pageLocation[this.id] = "right";
-//         }
-//     }
-// );
-
-// $(".front").hover(
-//     function() {
-//         TweenLite.to($(this).find(".pageFoldRight"), 0.3, {
-//             width: "50px",
-//             height: "50px",
-//             backgroundImage: "linear-gradient(45deg,  #fefefe 0%,#f2f2f2 49%,#ffffff 50%,#ffffff 100%)"
-//         });
-//     },
-//     function() {
-//         TweenLite.to($(this).find(".pageFoldRight"), 0.3, {
-//             width: "0px",
-//             height: "0px"
-//         });
-//     }
-// );
-
-// $(".back").hover(
-//     function() {
-//         TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {
-//             width: "50px",
-//             height: "50px",
-//             backgroundImage: "linear-gradient(135deg,  #ffffff 0%,#ffffff 50%,#f2f2f2 51%,#fefefe 100%)"
-//         });
-//     },
-//     function() {
-//         TweenLite.to($(this).find(".pageFoldLeft"), 0.3, {
-//             width: "0px",
-//             height: "0px"
-//         });
-//     }
-// );
-</script>

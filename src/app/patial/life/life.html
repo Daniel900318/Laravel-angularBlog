@@ -1,38 +1,59 @@
 <div class="life_header" style="text-align:center">
-	<div class="life_title">life in new york city</div>
+    <div class="life_title">
+        life in new york city
+    </div>
 </div>
-<div class="life_body">
-    <div class="main_img">
-        <img src="./assets/beauty/1.png">
-        <div class="life_title">
-            <p>The title of the post</p>
-            <span>12.01.15</span>
+<div class="container">
+    <div class="life_body wrapper">
+        <div class="main_img">
+            <img src="./assets/beauty/1.png">
+                <div class="life_title">
+                    <p>
+                        The title of the post
+                    </p>
+                    <span>
+                        12.01.15
+                    </span>
+                </div>
+            </img>
+        </div>
+        <div class="text_1">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+        </div>
+        <div class="life_cell" ng-repeat="item in [1, 2]">
+            <div class="cell_text">
+                <div class="title">
+                    Idea #{{item}}: Harverst some...
+                </div>
+                <div class="content">
+                    There is a long list of benefits of sharing a regular date night with you partner! Couples who take this time to nurture their relationshop with one another are more likely to enjoy high-quality relationships. Regular dates offer couples the opportunity to enjoy each... pany and let go of the stresses that come with day-today life.
+                </div>
+            </div>
+            <div class="cell_video">
+                <iframe allowfullscreen="" frameborder="0" height="345" src="http://www.youtube.com/embed/bIAMrcMOlsA?autoplay=0&cc_load_policy=1&loop=1&playlist=bIAMrcMOlsA" width="100%">
+                </iframe>
+            </div>
+        </div>
+        <div class="que">
+            Did any news about the future of work catch your attention this week?
         </div>
     </div>
-    <div class="text_1">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+</div>
+Tell us about it in the comments section below.
+<div class="comment">
+    <div class="photo">
+        <img src="./assets/beauty/man.png">
+        </img>
     </div>
-    <div ng-repeat="item in [1, 2]" class="life_cell">
-        <div class="cell_text">
-            <div class="title">Idea #{{item}}: Harverst some...</div>
-            <div class="content">There is a long list of benefits of sharing a regular date night with you partner! Couples who take this time to nurture their relationshop with one another are more likely to enjoy high-quality relationships. Regular dates offer couples the opportunity to enjoy each... pany and let go of the stresses that come with day-today life.</div>
+    <div class="comment_text">
+        <div class="title">
+            Mellisa Dempsey
         </div>
-        <div class="cell_video">
-            <iframe width="100%" height="345" src="http://www.youtube.com/embed/bIAMrcMOlsA?autoplay=0&amp;cc_load_policy=1&amp;loop=1&amp;playlist=bIAMrcMOlsA" frameborder="0" allowfullscreen=""></iframe>
+        <div class="sub_title">
+            Freelance Contributor
         </div>
-    </div>
-    <div class="que">
-        Did any news about the future of work catch your attention this week?</br>
-        Tell us about it in the comments section below.
-    </div>
-    <div class="comment">
-        <div class="photo">
-            <img src="./assets/beauty/man.png">
-        </div>
-        <div class="comment_text">
-            <div class="title">Mellisa Dempsey</div>
-            <div class="sub_title">Freelance Contributor</div>
-            <div class="content">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        <div class="content">
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         </div>
     </div>
 </div>

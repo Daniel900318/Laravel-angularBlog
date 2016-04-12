@@ -1,5 +1,5 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+<nav class="container">
+    <div class="wrapper navbar navbar-inverse">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed bmd-ripple" data-toggle="collapse" data-target="#ugly_navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -13,7 +13,7 @@
                 <li ng-repeat="menu in vm.tabMenu">
                     <a href="" class="bmd-ripple" ng-click="vm.goTab($index)" ng-class="{active : vm.isActive($index), isactive : vm.curentActive($index)}">{{menu}}</a>
                 </li>
-            </ul> 
+            </ul>
         </div>
     </div>
 </nav>

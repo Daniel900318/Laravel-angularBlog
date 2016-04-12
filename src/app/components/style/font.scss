@@ -1,8 +1,8 @@
 // for build
-// $base_url: '../app/';
+$base_url: '../app/';
 
 // for dev
-$base_url: '';
+// $base_url: '';
 
 @font-face {
     font-family: kelson-bold;
@@ -42,7 +42,7 @@ $base_url: '';
 }
 @font-face {
     font-family: myriad-regular;
-    src: url($base_url + 'components/style/customfont/MyriadPro-regular.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-Regular.otf') format("opentype");
 }
 @font-face {
     font-family: myriad-semibold;

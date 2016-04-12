@@ -1,34 +1,56 @@
 <div class="home_header">
-    <h2 class="title">Uglymona - Offering the best dating and relationship Advice</h2>
-    <a class="go_btn btn bmd-ripple">Visit Main Site</a>
+    <!-- <img src="./assets/header/home.png" alt=""> -->
+    <h2 class="title">
+        Uglymona - Offering the best dating and relationship Advice
+    </h2>
+    <a class="go_btn btn bmd-ripple" href="http://www.uglymona.com/" target="blank">
+        Visit Main Site
+    </a>
 </div>
-<div class="home_body">
-    <!-- items being paged -->
-    <div ng-repeat="item in home.items" class="home_cell">
-        <div class="cell_text">
-            <div class="title">Idea #{{item}}: Harverst some...</div>
-            <div class="content">There is a long list of benefits of sharing a regular date night with you partner! Couples who take this time to nurture their relationshop with one another are more likely to enjoy high-quality relationships. Regular dates offer couples the opportunity to enjoy each... pany and let go of the stresses that come with day-today life.</div>
+<div class="container">
+    <div class="home_body wrapper">
+        <!-- items being paged -->
+        <div class="home_cell" ng-repeat="item in home.items">
+            <div class="cell_text">
+                <div class="title">
+                    Idea #{{item}}: Harverst some...
+                </div>
+                <div class="content">
+                    There is a long list of benefits of sharing a regular date night with you partner! Couples who take this time to nurture their relationshop with one another are more likely to enjoy high-quality relationships. Regular dates offer couples the opportunity to enjoy each... pany and let go of the stresses that come with day-today life.
+                </div>
+            </div>
+            <div class="cell_img">
+                <img src="./assets/home/test.png">
+                </img>
+            </div>
         </div>
-        <div class="cell_img">
-            <img src="./assets/home/test.png">
-        </div>
+        <!-- pager -->
+        <ul class="pagination" ng-if="home.pager.pages.length">
+            <li ng-class="{disabled:home.pager.currentPage === 1}">
+                <a ng-click="home.setPage(1)">
+                    First
+                </a>
+            </li>
+            <li ng-class="{disabled:home.pager.currentPage === 1}">
+                <a ng-click="home.setPage(home.pager.currentPage - 1)">
+                    Previous
+                </a>
+            </li>
+            <li ng-class="{active:home.pager.currentPage === page}" ng-repeat="page in home.pager.pages">
+                <a ng-click="home.setPage(page)">
+                    {{page}}
+                </a>
+            </li>
+            <li ng-class="{disabled:home.pager.currentPage === home.pager.totalPages}">
+                <a ng-click="home.setPage(home.pager.currentPage + 1)">
+                    Next
+                </a>
+            </li>
+            <li ng-class="{disabled:home.pager.currentPage === home.pager.totalPages}">
+                <a ng-click="home.setPage(home.pager.totalPages)">
+                    Last
+                </a>
+            </li>
+        </ul>
     </div>
-    <!-- pager -->
-    <ul ng-if="home.pager.pages.length" class="pagination">
-        <li ng-class="{disabled:home.pager.currentPage === 1}">
-            <a ng-click="home.setPage(1)">First</a>
-        </li>
-        <li ng-class="{disabled:home.pager.currentPage === 1}">
-            <a ng-click="home.setPage(home.pager.currentPage - 1)">Previous</a>
-        </li>
-        <li ng-repeat="page in home.pager.pages" ng-class="{active:home.pager.currentPage === page}">
-            <a ng-click="home.setPage(page)">{{page}}</a>
-        </li>
-        <li ng-class="{disabled:home.pager.currentPage === home.pager.totalPages}">
-            <a ng-click="home.setPage(home.pager.currentPage + 1)">Next</a>
-        </li>
-        <li ng-class="{disabled:home.pager.currentPage === home.pager.totalPages}">
-            <a ng-click="home.setPage(home.pager.totalPages)">Last</a>
-        </li>
-    </ul>
 </div>
