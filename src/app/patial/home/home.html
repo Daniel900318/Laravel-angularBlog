@@ -1,10 +1,10 @@
 <div class="home_header">
     <!-- <img src="./assets/header/home.png" alt=""> -->
     <h2 class="title">
-        Uglymona - Offering the best dating and relationship Advice
+        Uglymona-Offering the best <br>dating & relationship Advice
     </h2>
     <a class="go_btn btn bmd-ripple" href="http://www.uglymona.com/" target="blank">
-        Visit Main Site
+        SIGN UP FOR FREE
     </a>
 </div>
 <div class="container">
@@ -25,32 +25,15 @@
             </div>
         </div>
         <!-- pager -->
-        <ul class="pagination" ng-if="home.pager.pages.length">
-            <li ng-class="{disabled:home.pager.currentPage === 1}">
-                <a ng-click="home.setPage(1)">
-                    First
-                </a>
-            </li>
-            <li ng-class="{disabled:home.pager.currentPage === 1}">
-                <a ng-click="home.setPage(home.pager.currentPage - 1)">
-                    Previous
-                </a>
-            </li>
-            <li ng-class="{active:home.pager.currentPage === page}" ng-repeat="page in home.pager.pages">
-                <a ng-click="home.setPage(page)">
-                    {{page}}
-                </a>
-            </li>
-            <li ng-class="{disabled:home.pager.currentPage === home.pager.totalPages}">
-                <a ng-click="home.setPage(home.pager.currentPage + 1)">
-                    Next
-                </a>
-            </li>
-            <li ng-class="{disabled:home.pager.currentPage === home.pager.totalPages}">
-                <a ng-click="home.setPage(home.pager.totalPages)">
-                    Last
-                </a>
-            </li>
-        </ul>
+        <paging page="currentPage" page-size="5" total="100" text-first="first" text-last="last" text-next="next" text-prev="prev" text-title-page="Page {page} Hover Over" text-title-first="First hover" text-title-last="Last hover" text-title-next="Next hover" text-title-prev="Prev hover" show-prev-next="true" show-first-last="true" class='isP'>
+        </paging>
+        <paging-m class='isM ng-isolate-scope'>
+            <ul data-ng-class="ulClass" class="pagination">
+                <li title="First hover" data-ng-class="Item.liClass" class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">first</a> </li>
+                <li title="Prev hover" data-ng-class="Item.liClass"  class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">prev</a> </li>                
+                <li title="Next hover" data-ng-class="Item.liClass"  class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">next</a> </li>
+                <li title="Last hover" data-ng-class="Item.liClass"  class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">last</a> </li>
+            </ul>
+        </paging-m>
     </div>
 </div>

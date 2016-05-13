@@ -1,14 +1,13 @@
 <div class="rom_header" style="text-align:center">
     <div class="rom_title">
         The Romantic Power
-        <br>
-            of Movies
+        <br> of Movies
         </br>
     </div>
 </div>
 <div class="container">
     <div class="rom_body wrapper">
-        <div class="filter_body">
+        <div class="filter_body isP">
             <div class="filter_cell">
                 <div class="odd ">
                 </div>
@@ -35,6 +34,24 @@
                 </div>
                 <div class="btn bmd-ripple beven">
                     Happy Full Moon
+                </div>
+            </div>
+        </div>
+        <div class="filter_body isM">
+            <div class="col-lg-9">
+                <div role="presentation" class="dropdown bmd-select form-control">
+                    <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false" target="_self">
+                        <span class="bmd-selected-value">Selected Filter</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-value="Action">Happy Full Moon1</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-value="Another">Happy Full Moon2</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">Happy Full Moon3</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">Happy Full Moon4</a></li>
+                    </ul>
+                    <span class="bmd-bar"></span>
                 </div>
             </div>
         </div>
@@ -85,14 +102,14 @@
                     See More
                 </div>
                 <div class="social_group">
-                    <span class="so_1 bmd-ripple">
-                    </span>
-                    <span class="so_2 bmd-ripple">
-                    </span>
+                    <!-- <span class="so_1 bmd-ripple">
+                    </span> -->
+                    <!-- <span class="so_2 bmd-ripple">
+                    </span> -->
                     <span class="so_3 bmd-ripple">
                     </span>
-                    <span class="so_4 bmd-ripple">
-                    </span>
+                    <!-- <span class="so_4 bmd-ripple">
+                    </span> -->
                     <span class="so_5 bmd-ripple">
                     </span>
                     <span class="so_6 bmd-ripple">
@@ -103,10 +120,10 @@
                     </span>
                     <span class="so_9 bmd-ripple">
                     </span>
-                    <span class="so_10 bmd-ripple">
+                    <!-- <span class="so_10 bmd-ripple">
                     </span>
                     <span class="so_11 bmd-ripple">
-                    </span>
+                    </span> -->
                 </div>
                 <div class="title">
                     Tags
@@ -118,32 +135,16 @@
                 </div>
             </div>
         </div>
-        <ul class="pagination" ng-if="rom.pager.pages.length">
-            <li ng-class="{disabled:rom.pager.currentPage === 1}">
-                <a ng-click="rom.setPage(1)">
-                    First
-                </a>
-            </li>
-            <li ng-class="{disabled:rom.pager.currentPage === 1}">
-                <a ng-click="rom.setPage(rom.pager.currentPage - 1)">
-                    Previous
-                </a>
-            </li>
-            <li ng-class="{active:rom.pager.currentPage === page}" ng-repeat="page in rom.pager.pages">
-                <a ng-click="rom.setPage(page)">
-                    {{page}}
-                </a>
-            </li>
-            <li ng-class="{disabled:rom.pager.currentPage === rom.pager.totalPages}">
-                <a ng-click="rom.setPage(rom.pager.currentPage + 1)">
-                    Next
-                </a>
-            </li>
-            <li ng-class="{disabled:vlog.pager.currentPage === vlog.pager.totalPages}">
-                <a ng-click="vlog.setPage(vlog.pager.totalPages)">
-                    Last
-                </a>
-            </li>
-        </ul>
+        <!-- pager -->
+        <paging page="currentPage" page-size="5" total="100" text-first="first" text-last="last" text-next="next" text-prev="prev" text-title-page="Page {page} Hover Over" text-title-first="First hover" text-title-last="Last hover" text-title-next="Next hover" text-title-prev="Prev hover" show-prev-next="true" show-first-last="true" class='isP'>
+        </paging>
+        <paging-m class='isM ng-isolate-scope'>
+            <ul data-ng-class="ulClass" class="pagination">
+                <li title="First hover" data-ng-class="Item.liClass" class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">first</a> </li>
+                <li title="Prev hover" data-ng-class="Item.liClass"  class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">prev</a> </li>                
+                <li title="Next hover" data-ng-class="Item.liClass"  class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">next</a> </li>
+                <li title="Last hover" data-ng-class="Item.liClass"  class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">last</a> </li>
+            </ul>
+        </paging-m>
     </div>
 </div>

@@ -26,7 +26,7 @@
 
             // "vm.creation" is avaible by directive option "bindToController: true"
             vm.relativeDate = moment(vm.creationDate).fromNow();
-            vm.tabMenu = ['Home', 'Beauty In The City', 'The Romantic Power of Movies', 'Vlog Romance', 'Photographs and Love', 'Life In New York City', 'The FlipBook of Mona']
+            vm.tabMenu = ['Home', 'Beauty In The City', 'The Romantic Power of Movies', 'Vlog Romance', 'Photographs and Love', 'Life In New York City', 'Flipbook']
             vm.currentTab = 0;
             vm.goTab = function(index){
                 vm.currentTab = index

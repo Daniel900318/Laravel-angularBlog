@@ -1,14 +1,22 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('uglymona')
-    .run(runBlock);
+    angular
+        .module('uglymona')
+        .run(runBlock);
 
-  /** @ngInject */
-  function runBlock($log) {
+    /** @ngInject */
+    function runBlock($log, $rootScope, $state) {
 
-    $log.debug('runBlock end');
-  }
+        $log.debug('runBlock end');
+        $rootScope.isCover = true;
+        $rootScope.isActive = function(state){
+        	if($state.current.name == state){
+        		return true
+        	}else{
+        		return false
+        	}
+        }
+    }
 
 })();

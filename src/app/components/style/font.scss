@@ -1,54 +1,164 @@
 // for build
-$base_url: '../app/';
-
+// $base_url: '../app/';
 // for dev
 // $base_url: '';
+// @font-face {
+//     font-family: kelson-bold;
+//     src: url($base_url + 'components/style/customfont/Kelson Sans Bold RU.otf') format("opentype");
+// }
 
+// @font-face {
+//     font-family: Kelson-light;
+//     src: url($base_url + 'components/style/customfont/Kelson Sans Light RU.otf') format("opentype");
+// }
+
+// @font-face {
+//     font-family: Kelson-regular;
+//     src: url($base_url + 'components/style/customfont/Kelson Sans Regular RU.otf') format("opentype");
+// }
+
+// @font-face {
+//     font-family: myriad-bold;
+//     src: url($base_url + 'components/style/customfont/MyriadPro-Bold.otf') format("opentype");
+// }
+
+// @font-face {
+//     font-family: myriad-boldcond;
+//     src: url($base_url + 'components/style/customfont/MyriadPro-BoldCond.otf') format("opentype");
+// }
+
+// @font-face {
+//     font-family: myriad-boldcondlt;
+//     src: url($base_url + 'components/style/customfont/MyriadPro-BoldCondlt.otf') format("opentype");
+// }
+
+// @font-face {
+//     font-family: myriad-cond;
+//     src: url($base_url + 'components/style/customfont/MyriadPro-Cond.otf') format("opentype");
+// }
+
+// @font-face {
+//     font-family: myriad-condlt;
+//     src: url($base_url + 'components/style/customfont/MyriadPro-Condlt.otf') format("opentype");
+// }
+
+// @font-face {
+//     font-family: myriad-lt;
+//     src: url($base_url + 'components/style/customfont/MyriadPro-It.otf') format("opentype");
+// }
+
+// @font-face {
+//     font-family: myriad-regular;
+//     src: url($base_url + 'components/style/customfont/MyriadPro-Regular.otf') format("opentype");
+// }
+
+// @font-face {
+//     font-family: myriad-semibold;
+//     src: url($base_url + 'components/style/customfont/Myriadpro-Semibold.otf') format("opentype");
+// }
+
+// @font-face {
+//     font-family: myriad-semiboldlt;
+//     src: url($base_url + 'components/style/customfont/Myriadpro-Semiboldlt.otf') format("opentype");
+// }
+
+
+// for build
+// $base_url: '../app/';
+// for dev
+$base_url: '';
 @font-face {
     font-family: kelson-bold;
-    src: url($base_url + 'components/style/customfont/Kelson Sans Bold RU.otf') format("opentype");   
+    src: url($base_url + 'components/style/customfont/KelsonSans-BoldRU.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/KelsonSans-BoldRU.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/Kelson Sans Bold RU.otf') format("opentype");
 }
+
 @font-face {
     font-family: Kelson-light;
-    src: url($base_url + 'components/style/customfont/Kelson Sans Light RU.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/KelsonSans-LightRU.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/KelsonSans-LightRU.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/Kelson Sans Light RU.otf') format("opentype");
 }
+
 @font-face {
     font-family: Kelson-regular;
-    src: url($base_url + 'components/style/customfont/Kelson Sans Regular RU.otf') format("opentype");    
+    src: url($base_url + 'components/style/customfont/KelsonSans-RegularRU.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/KelsonSans-RegularRU.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/Kelson Sans Regular RU.otf') format("opentype");
 }
+
 @font-face {
     font-family: myriad-bold;
-    src: url($base_url + 'components/style/customfont/MyriadPro-Bold.otf') format("opentype"); 
+    src: url($base_url + 'components/style/customfont/MyriadPro-Bold.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/MyriadPro-Bold.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/MyriadPro-Bold.otf') format("opentype");
 }
+
 @font-face {
     font-family: myriad-boldcond;
-    src: url($base_url + 'components/style/customfont/MyriadPro-BoldCond.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-BoldCond.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/MyriadPro-BoldCond.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/MyriadPro-BoldCond.otf') format("opentype");
 }
+
 @font-face {
     font-family: myriad-boldcondlt;
-    src: url($base_url + 'components/style/customfont/MyriadPro-BoldCondlt.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-BoldCondIt.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/MyriadPro-BoldCondIt.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/MyriadPro-BoldCondlt.otf') format("opentype");
 }
+
 @font-face {
     font-family: myriad-cond;
-    src: url($base_url + 'components/style/customfont/MyriadPro-Cond.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-Cond.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/MyriadPro-Cond.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/MyriadPro-Cond.otf') format("opentype");
 }
+
 @font-face {
     font-family: myriad-condlt;
-    src: url($base_url + 'components/style/customfont/MyriadPro-Condlt.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-CondIt.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/MyriadPro-CondIt.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/MyriadPro-Condlt.otf') format("opentype");
 }
+
 @font-face {
     font-family: myriad-lt;
-    src: url($base_url + 'components/style/customfont/MyriadPro-It.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-It.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/MyriadPro-It.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/MyriadPro-It.otf') format("opentype");
 }
+
 @font-face {
     font-family: myriad-regular;
-    src: url($base_url + 'components/style/customfont/MyriadPro-Regular.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-Regular.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/MyriadPro-Regular.otf') format("opentype");
 }
+
 @font-face {
     font-family: myriad-semibold;
-    src: url($base_url + 'components/style/customfont/Myriadpro-Semibold.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-Semibold.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/MyriadPro-Semibold.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/Myriadpro-Semibold.otf') format("opentype");
 }
+
 @font-face {
     font-family: myriad-semiboldlt;
-    src: url($base_url + 'components/style/customfont/Myriadpro-Semiboldlt.otf') format("opentype");
+    src: url($base_url + 'components/style/customfont/MyriadPro-SemiboldIt.eot');
+    /* IE9 Compat Modes */
+    src: url($base_url + 'components/style/customfont/MyriadPro-SemiboldIt.eot?#iefix') format('embedded-opentype'),
+    url($base_url + 'components/style/customfont/Myriadpro-Semiboldlt.otf') format("opentype");
 }

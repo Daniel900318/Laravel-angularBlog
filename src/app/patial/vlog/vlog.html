@@ -11,7 +11,7 @@
                     the title of the video
                 </div>
                 <div class="video">
-                    <iframe allowfullscreen="" frameborder="0" height="345" src="http://www.youtube.com/embed/bIAMrcMOlsA?autoplay=0&cc_load_policy=1&loop=1&playlist=bIAMrcMOlsA" width="100%">
+                    <iframe allowfullscreen="" frameborder="0" height="345" src="http://www.youtube.com/embed/ITswHbJPHhQ?autoplay=0&cc_load_policy=1&loop=1&playlist=ITswHbJPHhQ" width="100%">
                     </iframe>
                 </div>
                 <div class="text">
@@ -29,38 +29,21 @@
                     </div>
                 </div>
                 <div class="cell_video">
-                    <iframe allowfullscreen="" frameborder="0" height="345" src="http://www.youtube.com/embed/bIAMrcMOlsA?autoplay=0&cc_load_policy=1&loop=1&playlist=bIAMrcMOlsA" width="100%">
+                    <iframe allowfullscreen="" frameborder="0" height="345" src="http://www.youtube.com/embed/Jb7ruu3rKtU?autoplay=0&cc_load_policy=1&loop=1&playlist=Jb7ruu3rKtU" width="100%">
                     </iframe>
                 </div>
             </div>
         </div>
         <!-- pager -->
-        <ul class="pagination" ng-if="vlog.pager.pages.length">
-            <li ng-class="{disabled:vlog.pager.currentPage === 1}">
-                <a ng-click="vlog.setPage(1)">
-                    First
-                </a>
-            </li>
-            <li ng-class="{disabled:vlog.pager.currentPage === 1}">
-                <a ng-click="vlog.setPage(vlog.pager.currentPage - 1)">
-                    Previous
-                </a>
-            </li>
-            <li ng-class="{active:vlog.pager.currentPage === page}" ng-repeat="page in vlog.pager.pages">
-                <a ng-click="vlog.setPage(page)">
-                    {{page}}
-                </a>
-            </li>
-            <li ng-class="{disabled:vlog.pager.currentPage === vlog.pager.totalPages}">
-                <a ng-click="vlog.setPage(vlog.pager.currentPage + 1)">
-                    Next
-                </a>
-            </li>
-            <li ng-class="{disabled:vlog.pager.currentPage === vlog.pager.totalPages}">
-                <a ng-click="vlog.setPage(vlog.pager.totalPages)">
-                    Last
-                </a>
-            </li>
-        </ul>
+        <paging page="currentPage" page-size="5" total="100" text-first="first" text-last="last" text-next="next" text-prev="prev" text-title-page="Page {page} Hover Over" text-title-first="First hover" text-title-last="Last hover" text-title-next="Next hover" text-title-prev="Prev hover" show-prev-next="true" show-first-last="true" class='isP'>
+        </paging>
+        <paging-m class='isM ng-isolate-scope'>
+            <ul data-ng-class="ulClass" class="pagination">
+                <li title="First hover" data-ng-class="Item.liClass" class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">first</a> </li>
+                <li title="Prev hover" data-ng-class="Item.liClass"  class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">prev</a> </li>                
+                <li title="Next hover" data-ng-class="Item.liClass"  class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">next</a> </li>
+                <li title="Last hover" data-ng-class="Item.liClass"  class="ng-scope"> <a href="" data-ng-class="Item.aClass" data-ng-click="Item.action()" class="ng-binding">last</a> </li>
+            </ul>
+        </paging-m>
     </div>
 </div>
